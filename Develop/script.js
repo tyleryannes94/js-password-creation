@@ -25,6 +25,12 @@ function generatePassword () {
       password += passwordLength.charAt(Math.floor(Math.random() * n));
   }
 
+  if (passwordLength === ""){
+    alert ("You need to select at least 1 character type. Try again!");
+    return "";
+
+  }
+
   return password;
 }
 
