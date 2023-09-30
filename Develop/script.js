@@ -2,15 +2,26 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword () {
-  var length = 16;
-  var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
-  var password = "";
-    for (var i = 0, n = charset.length; i < length; ++i) {
-        password += charset.charAt(Math.floor(Math.random() * n));
-    }
+  var charsetLowercase = "abcdefghijklmnopqrstuvwxyz";
+  var charsetUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var charsetNumeric = "0123456789";
+  var charsetSpecial = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+ 
 
-  var passwordLength = prompt ("Input an integer for how many characters your password should be.")
-  
+  var passwordInput = prompt ("How many characters should your passwordd be? Enter a number between 8 and 128.");
+
+  if (passwordInput < 8 || passwordInput > 128){
+    alert ("You need to choose an integer between 8 and 128. Try again!");
+    return "";
+  }
+
+  if (confirm("Include lowercase letters?")) password += charsetLowercase;
+
+  var password = "";
+  for (var i = 0, n = charset.length; i < length; ++i) {
+      password += charset.charAt(Math.floor(Math.random() * n));
+  }
+
   return password;
 }
 
