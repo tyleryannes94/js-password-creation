@@ -15,10 +15,10 @@ function generatePassword () {
     return "";
   }
 
-  if (confirm("Include lowercase letter?")) passwordLength += charsetLowercase;
-  if (confirm("Include an uppercase letter?")) passwordLength += charsetUppercase;
-  if (confirm("Include numbers?")) passwordLength += charsetNumeric;
-  if (confirm("Include special characters?")) passwordLength += charsetSpecial;
+  if (confirm("Do you want to include a lowercase letter in your password? If yes, click OK. If no, click Cancel to proceed to your next selection.")) passwordLength += charsetLowercase;
+  if (confirm("Do you want to include an upper case letter in your password? If yes, click OK. If no, click Cancel to proceed to your next selection.")) passwordLength += charsetUppercase;
+  if (confirm("Do you want to include a number in your password? If yes, click OK. If no, click Cancel to proceed to your next selection.")) passwordLength += charsetNumeric;
+  if (confirm("Do you want to include a special character in your password? If yes, click OK. If no, click Cancel to proceed to your next selection. Remember you must choose at least one of these selections!")) passwordLength += charsetSpecial;
 
   var password = "";
   for (var i = 0, n = passwordLength.length; i < passwordInput; ++i) {
