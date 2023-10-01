@@ -43,3 +43,12 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function copyPassword () {
+  var copyText = document.getElementById ("password").value;
+  navigator.clipboard.writeText(copyText).then(function() {
+    alert("Copied your password.");
+  }).catch(function(err) {
+    alert('Something went wrong', err);
+  });
+}
