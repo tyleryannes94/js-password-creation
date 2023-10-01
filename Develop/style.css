@@ -52,6 +52,8 @@ header {
 
 .card-body {
   min-height: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-footer {
@@ -72,7 +74,7 @@ header {
   clear: both;
 }
 
-.btn {
+.btn, .passwordBtn {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
@@ -86,6 +88,12 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+}
+
+.passwordBtn {
+  display: none;
+  /* margin-top: -15%; */
+  margin-left: 35%;
 }
 
 button[disabled] {
